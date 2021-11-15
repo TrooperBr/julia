@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+
+
+<section class="section section-lg">
+      <div class="container">
+        <div class="row row-grid justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-3">Você faz o que vc ama
+              <span class="text-success"> Quem precisa do Certificado Digital ?</span>
+            </h2>
+            <p class="lead">A utilização do Certificado Digital é livre, seja ela pessoa física ou jurídica, que deseja garantir autenticidade nas transações eletrônicas, mesmo quando não obrigatório. Porém, em alguns casos, no entanto, esse uso deixa de ser uma opção e passa a ser uma exigência, como para emissão de Notas Fiscais, para empresas com mais de 5 funcionários entre outros.</p>
+            <div class="btn-wrapper">
+              <a href="https://themewagon.com/themes/free-bootstrap-4-design-system/" class="btn btn-primary mb-3 mb-sm-0">Produtos</a>
+            </div>
+            <div class="text-center">
+              <h4 class="display-4 mb-5 mt-5">Autorizado pelo Serasa</h4>
+              <div class="row justify-content-center">
+                <div class="col-lg-2 col-4">
+                  <a href="https://www.serasa.com.br/" target="_blank" data-toggle="tooltip" data-original-title="serasa">
+                    <img src="/static/docs/serasa.png" class="img-fluid" style="width: 500px;">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<div class="container mt-5 mb-5 " style="top: 50;">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            {% for i in products %}
+            <div class="row p-2 bg-white border rounded">
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{i.image.url}}"></div>
+
+                <div class="col-md-6 mt-1">
+                    <h5>{{i.name}}</h5>
+                    <p class="text-justify text-truncate para mb-0">{{i.text}}<br><br></p>
+                </div>
+
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">{{ i.price }}R$</h4><span class="strike-text"></span>
+                    </div>
+                    <div class="d-flex flex-column mt-4"><a href="{% url 'product-detail' i.pk %}"><button class="btn btn-primary btn-sm" type="button">Detalhes</button></a><a href="https://{{i.link}}"><button class="btn btn-outline-primary btn-sm mt-2" type="button">Comprar</button></a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

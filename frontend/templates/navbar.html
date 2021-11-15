@@ -1,0 +1,114 @@
+{% load static %}
+
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="{% url 'home' %}">
+          <img src="{% static 'docs/logo.png' %}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img src="{% static 'docs/logo.png' %}">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">Nos</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl">
+                <div class="dropdown-menu-inner">
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-spaceship"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1"> O que é Certificado Digital ?</h6>
+                      <p class="description d-none d-md-inline-block mb-0">O Certificado Digital da Serasa Experian é a identidade eletrônica de pessoas ou empresas, equivalente a uma carteira de identidade no mundo virtual. Ele é uma alternativa menos burocrática, mais sustentável e segura, devido criptografia complexa.</p>
+                    </div>
+                  </a>
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">Quais os tipos de Certificado Digital ?</h5>
+                      <p class="description d-none d-md-inline-block mb-0">Existem alguns tipos de Certificados, mas os principais são o A1* e A3*. A diferença entre eles está no nível de segurança e no processo de armazenamento. O A1 (Software), certificado instalado diretamente em uma máquina e possibilitando que sejam feitas cópias de segurança e posteriormente a instalação em outros computadores, com validade de um ano. A3 (Mídia Física) são os certificados de token USB ou cartão com chip (necessita de leitora), com validade de até três anos, que devem ser conectados ao computador para funcionar.</p>
+                    </div>
+                  </a>
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">Para que serve o Certificado Digital?</h5>
+                      <p class="description d-none d-md-inline-block mb-0">O Certificado Digital tem diversas funcionalidades, uma delas é assinar digitalmente documentos garantindo autenticidade e validade jurídica, ter acesso a sistemas eletrônicos restritos, como Receita Federal e INSS.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Você</span>
+              </a>
+              <div class="dropdown-menu">
+                {% if user.is_authenticated %}
+                <a href="{% url 'products' %}" class="dropdown-item">Produtos</a>
+                <a href="{% url 'logout' %}" class="dropdown-item">Sair</a>
+                {% else %}
+                <a href="{% url 'register' %}" class="dropdown-item">Registre-se</a>
+                <a href="{% url 'login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://api.whatsapp.com/send?phone=5582996091488&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Certificado%20Digital%20Serasa%20Experian." target="_blank" data-toggle="tooltip" title="WhatsApp">
+                <i class="fa fa-whatsapp"></i>
+                <span class="nav-link-inner--text d-lg-none">WhatsApp</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://www.instagram.com/avancocertificadodigital/?hl=pt-br" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                <i class="fa fa-instagram"></i>
+                <span class="nav-link-inner--text d-lg-none">Instagram</span>
+              </a>
+            </li>
+            <!--li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+                <i class="fa fa-twitter-square"></i>
+                <span class="nav-link-inner--text d-lg-none">Twitter</span>
+              </a>
+            </li-->
+                {% if user.is_authenticated %}
+                {% else %}
+            <li class="nav-item d-none d-lg-block ml-lg-4">
+              <a href="{% url 'login' %}" target="_blank" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fa fa-bank mr-2"></i>
+                </span>
+                <span class="nav-link-inner--text">Registre-se</span>
+              </a>
+            </li>
+                {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>

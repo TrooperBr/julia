@@ -1,0 +1,13 @@
+{% load static %}  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+  <meta name="author" content="Miguel Martins">
+  <title>{% if title %}- {{ title }}{% endif %}</title>
+  <!-- Favicon -->
+  <link href="{% static 'docs/fac.png' %}" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="{% static '/assets/vendor/nucleo/css/nuc' %}leo.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/font-awesome/cs' %}s/font-awesome.min.css" rel="stylesheet">
